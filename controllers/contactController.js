@@ -3,8 +3,8 @@ const Contact = require("../models/contactModel");
 //@desc Get all contacts
 //@route GET /api/contacts
 //@access private
-const getContacts = asyncHandler(async (req, res) => {
-  const contacts = await Contact.find({ user_id: req.user.id });
+const getContactsSearch = asyncHandler(async (req, res) => {
+  const contacts = await Contact.find({});
   res.status(200).json(contacts);
 });
 
@@ -82,7 +82,7 @@ const deleteContact = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-  getContacts,
+  getContactsSearch,
   createContact,
   getContact,
   updateContact,
